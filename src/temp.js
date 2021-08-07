@@ -1,9 +1,9 @@
-module.exports = function toReadable(numberToTransform) {
+function toReadable(numberToTransform) {
     let result = false;
 
     const convertExclusions = {
         19: "nineteen",
-        18: "eighteen",
+        18: "eightteen",
         17: "seventeen",
         16: "sixteen",
         15: "fifteen",
@@ -54,5 +54,7 @@ module.exports = function toReadable(numberToTransform) {
             : (convertTens[tens] || "") + " " + (convert[units] || "")
     }`;
 
-    return result.replace(/\s+/g, " ").trim();
-};
+    return result;
+}
+
+console.log(toReadable(412));
